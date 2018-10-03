@@ -4,11 +4,11 @@ library(lubridate)
 
 ## Download files and read data
 fileurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-#download.file(fileurl, destfile = "data.zip")
+download.file(fileurl, destfile = "data.zip")
 
-#if(!file.exists("household_power_consumption")){
- #   unzip("data.zip")
-#}
+if(!file.exists("household_power_consumption")){
+    unzip("data.zip")
+}
 
 rawdata <- tbl_df(read.table("household_power_consumption.txt", header = T, stringsAsFactors = T, sep =";"))
 
